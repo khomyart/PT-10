@@ -4,11 +4,15 @@ include './lib/db.php';
 include './lib/users.php';
 include './lib/contacts.php';
 
+/*ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);*/
+
 initSession();
 $isIndex = basename($_SERVER['SCRIPT_FILENAME']) == 'index.php';
 
 if (isAuth()) {
-    // User is not authorized
+    // User is authorized
     if ($isIndex) {
         // Current file is index.
         // No need to show auth form.
@@ -25,3 +29,7 @@ if (isAuth()) {
         die();
     }
 }
+
+/*var_dump($_POST);
+echo '<br/>';
+var_dump($_SESSION);*/
