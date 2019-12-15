@@ -14,7 +14,8 @@ try {
  * @param $params array Array of query parameters
  * @return bool|PDOStatement
  */
-function performQuery($query, $params) {
+function performQuery($query, $params)
+{
     global $pdo;
 
     $statement = $pdo->prepare($query);
@@ -29,7 +30,8 @@ function performQuery($query, $params) {
  * @param $query
  * @return array
  */
-function getAllRows($query, $params = []) {
+function getAllRows($query, $params = [])
+{
     $statement = performQuery($query, $params);
 
     if ($statement === false) {
@@ -46,7 +48,8 @@ function getAllRows($query, $params = []) {
  * @param $params
  * @return array
  */
-function getRow($query, $params = []) {
+function getRow($query, $params = [])
+{
     $statement = performQuery($query, $params);
 
     if ($statement === false) {

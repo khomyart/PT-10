@@ -10,4 +10,14 @@
 
     <title>Comic book characters DB</title>
 </head>
+<style>
+    .table td, .table th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    label {
+        /*float:left;
+    }
+</style>
 <body>
