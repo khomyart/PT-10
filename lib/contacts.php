@@ -20,6 +20,24 @@ function getListOfContacts($filter = '')
 }
 
 /**
+ * Returns join list\array of contacts
+ *
+ * @param $filter
+ * @return array
+ */
+function getJoinListOfContacts($filter = '')
+{
+    $query = 'SELECT c.id, c.phone, c.first_name, c.last_name, u.email, u.nickname FROM `contact` AS c LEFT JOIN `user` AS u ON c.user_id = u.id WHERE 1';
+
+    if (is_string($filter) && (trim($filter) != '')) {
+        $query .= ' AND ( (c.first_name LIKE :filter) OR (c.last_name LIKE :filter) OR (c.phone LIKE :filter) OR (c.id LIKE :filter) OR (u.email LIKE :filter) OR (u.nickname LIKE :filter) )';
+        $params['filter'] = '%' . $filter . '%';
+    }
+
+    return getAllRows($query, $params);
+}
+
+/**
  * Returns list\array of users
  *
  * @param $filter

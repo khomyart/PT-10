@@ -196,7 +196,7 @@ if(isset($_POST['contactRemove'])) {
                                 </td>
                                 <td>
                                     <input class="w-100 text-center" name="lastNameEdit"
-                                           value="<?= $phoneData['first_name'] ?>"
+                                           value="<?= $phoneData['last_name'] ?>"
                                     >
                                 </td>
                                 <td>

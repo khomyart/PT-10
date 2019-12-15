@@ -109,6 +109,14 @@ if ($_POST['regButton']) {
                                 data-target="#exampleModal" style="border-radius: 0px 0px 5px 5px">
                             Registration
                         </button>
+
+                        <hr>
+
+                        <a href="http://pt-10.khomyart.com/joinContactList.php">
+                            <button type="button" class="btn btn-primary btn-block">
+                                Contact list
+                            </button>
+                        </a>
                     </form>
                     <div class="modal fade"
                          id="exampleModal"
