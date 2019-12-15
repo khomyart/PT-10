@@ -7,9 +7,14 @@ include './lib/contacts.php';
 /*ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);*/
-/*
+
 initSession();
 $isIndex = basename($_SERVER['SCRIPT_FILENAME']) == 'index.php';
+$isJoinContactList =  basename($_SERVER['SCRIPT_FILENAME']) == 'joinContactList.php';
+
+if ($isJoinContactList) {
+    $_SESSION['auth']['nickname'] = 'Temp user';
+}
 
 if (isAuth()) {
     // User is authorized
